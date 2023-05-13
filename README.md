@@ -4,6 +4,16 @@
 
 ## 快速开始
 
+0、引入 sdk
+
+```xml
+<dependency>
+    <groupId>com.yucongming</groupId>
+    <artifactId>yucongming-java-sdk</artifactId>
+    <version>0.0.1</version>
+</dependency>
+```
+
 1、初始化 YuCongMingClient 对象
 
 ```java
@@ -26,6 +36,8 @@ devChatRequest.setMessage("鱼皮");
 BaseResponse<DevChatResponse> response = client.doChat(devChatRequest);
 System.out.println(response);
 ```
+
+
 
 ## API 文档
 
