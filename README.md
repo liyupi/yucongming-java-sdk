@@ -2,6 +2,10 @@
 
 只需一行代码，使用强大的 AI 能力！
 
+鱼聪明 AI：https://yucongming.com
+
+官方服务号：鱼聪明AI
+
 ## 快速开始
 
 0、引入 sdk
