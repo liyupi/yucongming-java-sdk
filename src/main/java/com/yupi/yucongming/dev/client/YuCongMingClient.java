@@ -1,5 +1,6 @@
 package com.yupi.yucongming.dev.client;
 
+import cn.hutool.core.lang.TypeReference;
 import cn.hutool.core.net.URLEncodeUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.http.HttpRequest;
@@ -47,7 +48,8 @@ public class YuCongMingClient {
                 .body(json)
                 .execute()
                 .body();
-        return JSONUtil.toBean(result, BaseResponse.class);
+        TypeReference<BaseResponse<DevChatResponse>> typeRef = new TypeReference<BaseResponse<DevChatResponse>>() {};
+        return JSONUtil.toBean(result, typeRef, false);
     }
 
     /**
@@ -73,8 +75,13 @@ public class YuCongMingClient {
         YuCongMingClient yuCongMingClient = new YuCongMingClient(accessKey, secretKey);
         DevChatRequest devChatRequest = new DevChatRequest();
         devChatRequest.setModelId(1651468516836098050L);
-        devChatRequest.setMessage("邓紫棋");
+        devChatRequest.setMessage("鱼皮");
         BaseResponse<DevChatResponse> devChatResponseBaseResponse = yuCongMingClient.doChat(devChatRequest);
         System.out.println(devChatResponseBaseResponse);
+        DevChatResponse data = devChatResponseBaseResponse.getData();
+        if (data != null) {
+            String content = data.getContent();
+            System.out.println(content);
+        }
     }
 }
