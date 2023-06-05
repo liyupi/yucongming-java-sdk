@@ -77,7 +77,7 @@ System.out.println(response.getData());
 
 请求参数：
 
-- modelId：使用的会话模型 id
+- modelId：使用的会话模型（助手）id
 - message：要发送的消息，不超过 1024 字
 
 响应结果：

@@ -18,7 +18,7 @@ import java.io.Serializable;
 public class DevChatRequest implements Serializable {
 
     /**
-     * 模型 id
+     * 模型（助手）id
      */
     private Long modelId;
 
