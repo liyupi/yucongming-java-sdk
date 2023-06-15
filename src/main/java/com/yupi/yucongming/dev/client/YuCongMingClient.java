@@ -1,15 +1,14 @@
 package com.yupi.yucongming.dev.client;
 
 import cn.hutool.core.lang.TypeReference;
-import cn.hutool.core.net.URLEncodeUtil;
 import cn.hutool.core.util.RandomUtil;
+import cn.hutool.crypto.SecureUtil;
 import cn.hutool.http.HttpRequest;
 import cn.hutool.json.JSONUtil;
 import com.yupi.yucongming.dev.common.BaseResponse;
 import com.yupi.yucongming.dev.model.DevChatRequest;
 import com.yupi.yucongming.dev.model.DevChatResponse;
 
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,7 +47,8 @@ public class YuCongMingClient {
                 .body(json)
                 .execute()
                 .body();
-        TypeReference<BaseResponse<DevChatResponse>> typeRef = new TypeReference<BaseResponse<DevChatResponse>>() {};
+        TypeReference<BaseResponse<DevChatResponse>> typeRef = new TypeReference<BaseResponse<DevChatResponse>>() {
+        };
         return JSONUtil.toBean(result, typeRef, false);
     }
 
@@ -62,7 +62,7 @@ public class YuCongMingClient {
         Map<String, String> hashMap = new HashMap<>();
         hashMap.put("accessKey", accessKey);
         hashMap.put("nonce", RandomUtil.randomNumbers(4));
-        String encodedBody = URLEncodeUtil.encode(body, StandardCharsets.UTF_8);
+        String encodedBody = SecureUtil.md5(body);
         hashMap.put("body", encodedBody);
         hashMap.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000));
         hashMap.put("sign", genSign(encodedBody, secretKey));
