@@ -101,7 +101,16 @@ BaseResponse<DevChatResponse> response = client.doChat(devChatRequest);
 System.out.println(response.getData());
 ```
 
+模型（助手）id：
+
+你可以通过平台首页的“创建助手”和“我的助手”功能来创建助手和查看模型（助手）id
+
+![](doc/imgs/model_id.png)
+
+
+
 ## Http 接入
+
 1. 获取 **AccessKey** 和 **SecretKey**
 ![](doc/imgs/key_secret.png)
 2. 请求信息
