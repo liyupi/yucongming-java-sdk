@@ -101,7 +101,16 @@ BaseResponse<DevChatResponse> response = client.doChat(devChatRequest);
 System.out.println(response.getData());
 ```
 
+模型（助手）：
+
+设置自己的模型（助手）可以使AI的回答更加个性化，如 “1651468516836098050” 这个模型（助手）id会更加倾向于回答歌曲和歌单，你可以通过平台首页的 “创建助手” 和 “我的助手” 功能来创建、查看和修改模型（助手），查看模型（助手）即可看到模型（助手）id。
+
+![](doc/imgs/model_id.png)
+
+
+
 ## Http 接入
+
 1. 获取 **AccessKey** 和 **SecretKey**
 ![](doc/imgs/key_secret.png)
 2. 请求信息
