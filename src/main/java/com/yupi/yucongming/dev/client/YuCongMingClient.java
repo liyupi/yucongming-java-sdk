@@ -22,7 +22,7 @@ import static com.yupi.yucongming.dev.utils.SignUtils.genSign;
  */
 public class YuCongMingClient {
 
-    private static final String HOST = "https://www.yucongming.com/api/dev";
+    private static final String HOST = "https://api.yucongming.com/api/dev";
 
     private final String accessKey;
 
