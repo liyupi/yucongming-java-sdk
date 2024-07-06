@@ -16,7 +16,7 @@
 <dependency>
     <groupId>com.yucongming</groupId>
     <artifactId>yucongming-java-sdk</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4</version>
 </dependency>
 ```
 
@@ -115,7 +115,7 @@ System.out.println(response.getData());
 ![](doc/imgs/key_secret.png)
 2. 请求信息
 
-   URL ：[https://www.yucongming.com/api/dev/chat]()
+   URL ：[https://api.yucongming.com/api/dev/chat]()
    请求方法：POST
    请求头：
    
@@ -158,7 +158,7 @@ System.out.println(response.getData());
            }
    
    class YuCongMingClient:
-       HOST = 'https://www.yucongming.com/api/dev'
+       HOST = 'https://api.yucongming.com/api/dev'
    
        def __init__(self, access_key, secret_key):
            self.access_key = access_key
